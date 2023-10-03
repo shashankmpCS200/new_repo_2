@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&family=Raleway:wght@600&display=swap"
+			rel="stylesheet" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<title>Scholar's Crate</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-sm mynavbar fixed-top">
+			<a href="/" id="logoLink" class="navbar-brand"
+				><img
+					src="./images/Scholar's Crate_files/Scholar's_crate logo.png"
+					width="175px"
+					alt=""
+			/></a>
+			<div class="collapse navbar-collapse ml-auto" id="mynavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a href="/" class="nav-link" id="homeLink">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/scholarships" class="nav-link" id="scholarshipsLink"
+							>Scholarships</a
+						>
+					</li>
+					<li class="nav-item">
+						<a href="/aboutus" class="nav-link" id="aboutusLink">About Us</a>
+					</li>
+					<li class="nav-item">
+						<a href="/contactus" class="nav-link" id="contactusLink"
+							>Contact Us</a
+						>
+					</li>
+				</ul>
+				<ul class="navbar-nav loginLink">
+					<li class="nav-item">
+						<a href="/login" id="loginLink" class="nav-link">Login</a>
+					</li>
+					<h4 class="navbar-or-h4">or</h4>
+					<li class="nav-item">
+						<a href="/register" class="nav-link" id="registerLink">Register</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="input-group rounded searchBar">
+			<input
+				type="search"
+				class="form-control"
+				id="searchInput"
+				placeholder="Search"
+				aria-label="Search"
+				aria-describedby="search-addon" />
+			<button
+				class="input-group-text border-0"
+				type="submit"
+				id="search-addon"
+				onclick="search(event)">
+				Search
+			</button>
+			<button
+				class="input-group-text border-0"
+				type="submit"
+				id="sort-button"
+				onclick="sortScholarship(event)">
+				Sort
+			</button>
+			<!-- <button class="input-group-text border-0">Eligible</button> -->
+		</div>
+		<hr class="hLine" />
+
+		<div class="displayContainer" id="displayContainer">
+			<!-- <div class="scholarshipsCard" >
+				<img src="" width="150px" class="scholarshipsImage" ></img> 
+				<div class="scholarshipText">
+					<div class="scholarshipinner">
+						<h1 class="scholarshipsName" id="scholarshipsName"></h1>
+					    <h2 class="scholarshipDate" id="scholarshipDate"></h2>
+						<div class="scholarshipLinkDiv">
+							<a href=""></a>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+		<script>
+			window.addEventListener("load", async (e) => {
+				try {
+					const response = await fetch("/scholarships", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({}),
+					});
+					console.log(response);
+					let data = await response.json();
+
+					// console.log(data.scholarshipArray[0], data.scholarshipArray[1]);
+					let options = {
+						year: "numeric",
+						month: "long",
+						day: "numeric",
+					};
+					data.scholarshipArray.forEach((element) => {
+						// const displayContainer = getElementById("displayContainer");
+
+						const scholarshipsCard = document.createElement("div");
+						const scholarshipText = document.createElement("div");
+						const scholarshipinner = document.createElement("div");
+						const scholarshipLinkDiv = document.createElement("div");
+						const scholarshipsName1 = document.createElement("h1");
+						const scholarshipDate1 = document.createElement("h2");
+						const scholarshiplink = document.createElement("a");
+						scholarshiplink.textContent = "Apply";
+						scholarshipsName1.innerHTML = element.name;
+						scholarshipDate1.innerText = "Last Date : " + element.lastDate;
+
+						scholarshipsName1.setAttribute("class", "scholarshipsName");
+						scholarshipDate1.setAttribute("class", "scholarshipDate");
+						scholarshipsCard.setAttribute("class", "scholarshipsCard");
+						scholarshipinner.setAttribute("class", "scholarshipinner");
+						scholarshipLinkDiv.setAttribute("class", "scholarshipLinkDiv");
+						scholarshipText.setAttribute("class", "scholarshipText");
+						scholarshiplink.setAttribute(
+							"class",
+							"scholarshipslink btn btn-primary rounded-pill"
+						);
+
+						scholarshiplink.setAttribute("href", element.redirectingLink);
+						scholarshipinner.appendChild(scholarshipsName1);
+						scholarshipinner.appendChild(scholarshipDate1);
+						scholarshipLinkDiv.appendChild(scholarshiplink);
+
+						scholarshipText.appendChild(scholarshipinner);
+						scholarshipText.appendChild(scholarshipLinkDiv);
+						scholarshipsCard.appendChild(scholarshipText);
+
+						displayContainer.appendChild(scholarshipsCard);
+					});
+					// let scholarshipsNameReturned = data.scholarshipArray[0].name;
+					// let scholarshipsDateReturned = data.scholarshipArray[0].date;
+					// scholarshipsName.innerText = scholarshipsNameReturned;
+					// scholarshipDate.innerText = scholarshipsDateReturned;
+				} catch (error) {
+					console.log(error);
+				}
+			});
+		</script>
+		<script src="./js/index.js"></script>
+	</body>
+</html>

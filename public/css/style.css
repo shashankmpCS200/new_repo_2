@@ -1,0 +1,337 @@
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+}
+body::-webkit-scrollbar{
+    display:none;
+}
+/*NAVBAR CSS*/
+.navbar-brand{
+    margin-left: 50px;
+}
+.mynavbar{
+    background-color: black; 
+    background-color: rgb(22 22 23 /80%);
+    backdrop-filter: blur(20px); 
+    
+    height: 75px;
+}
+.mynavbar a{
+    color: #f7f7f7;
+    
+}
+.mynavbar-light{
+    background-color: rgb(200,200,200);
+    height: 75px;
+}
+.mynavbar-light a{
+    color: black;
+}
+.loginLink{
+   margin-left: auto;
+   margin-right: 10%;
+}
+.navbar-or-h4{
+    color: white;
+    margin-top:3px;
+    margin-left:5px ;
+    margin-right: 5px;
+}
+.tempColor{
+    height: 75px;
+}
+.tempColor a{
+    color: white;
+}
+
+
+/*containerRegister CSS*/
+.containerRegister{
+    width:60%;
+    position: absolute;
+    left: 50%;
+    top:55%;
+    transform:translate(-50%,-50%);
+    padding: 2rem;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+}
+.containerRegister input{
+    border-radius: 0.5rem;
+}
+.containerRegister button{
+    margin-left: auto;
+}
+/*INDEX CSS*/
+.indexHeader{
+    min-height: 100vh;
+    width: 100;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../images/banner.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.text-box{
+    width:90%;
+    color: gold;
+    position: absolute;
+    top: 60%;
+    left:50%;
+    transform: translate(-50%,-60%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+}
+.text-box p{
+    margin:10px 0 40px;
+    color: #fff;
+    font-size: 15px;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background:transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid gold;
+    background:rgb(255, 217, 0);
+    transition:1s;  
+}
+
+/*SCHOLARSHIPS*/
+/* .scholarshipsHeader{
+    min-height: 100vh;
+    width: 100;
+    margin-top: 200px;
+} */
+.searchBar{
+    margin-top: 100px;
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.searchBar input{
+   border-top-left-radius: 2rem;
+   border-bottom-left-radius: 2rem;
+}
+#search-addon{
+    background-color: gold;
+    border-top-right-radius: 2rem;
+   border-bottom-right-radius: 2rem;
+   cursor: pointer;
+}
+#sort-button{
+    background-color: gold;
+    border-radius: 2rem;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.hLine{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.displayContainer{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    row-gap:20px;
+    justify-content:space-between ;
+}
+.scholarshipsCard{
+    box-shadow: 0 0 5px;
+    height: 30%;
+    border: 3px solid #3B71CA;
+    width: 45%;
+    border-radius: 2rem;
+}
+.scholarshipsCard{
+    display: flex;
+    padding: 1rem;
+}
+/* .scholarshipsCard .scholarshipsImage{
+    border-radius: 2rem; 
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+} */
+.scholarshipsCard .scholarshipText{
+    height: 100%;
+    width: 100%;
+    
+}
+.scholarshipinner{
+    margin-top: 10%;
+    margin-left: 20px;
+}
+.scholarshipLinkDiv{
+    margin-top: auto;
+    margin-bottom: 0px;
+    margin-left: 20px;
+}
+.scholarshipText h1{
+    font-size: 1.5rem;
+}
+.scholarshipText h2{
+    font-size: 1rem;
+}
+.scholarshipslink{
+    text-decoration: none;
+    margin-top: auto;
+    margin-bottom: 0px;
+}
+
+
+.course{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+  
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color:#777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis:31%;
+    background:rgb(239, 227, 162);
+    border: 5px solid #3B71CA;
+    color: #3B71CA;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px;
+}
+.course-col:hover{
+    box-shadow: 0px 0 20px 0px rgba(0,0,0,0.2);
+}
+
+/*--------testimonials----------*/
+.testimonials{
+        width: 80%;
+        margin:auto;
+        padding-top: 100px;
+        text-align: center;
+}
+.testimonial-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background:rgb(239, 227, 162);
+    border: 5px solid #3B71CA;
+    color: #3B71CA;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+.testimonial-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+.testimonial-col p{
+    padding: 0px;
+}
+.testimonial-col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+
+/*------------footer-------------*/
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer{
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+/*-------------------------------*/
+
+.sub-header{
+    height: 50vh;
+    width: 100%;
+    margin-top: 75px;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sub-header h1{
+    color: gold;
+    font-size: 4rem;
+}
+.about-us{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.about-col{
+    flex-basis: 48%;
+    padding: 3rem;
+
+}
+.about-col img{
+    width: 100%;
+}
+.about-col p{
+    padding: 15px 0 25px;
+    margin-left: 2px;
+}
+.aboutusImage{
+    width:40%;
+    height: 90%;
+    border-radius: 2rem;
+}
+.aboutusP{
+    color:#777;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 25px;
+    padding: 10px;
+}
+.radioButton{
+    margin-left: 50px;
+}
+
+

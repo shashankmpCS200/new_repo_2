@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    
+}
+body{
+    background: white;
+    font-family: 'Poppins', sans-serif;
+
+}
+.container-contact{
+    position: fixed;
+    margin-top: 2%;
+    width: 100%;
+    /* margin: 50px auto; */
+    position: absolute;
+    
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.contact-box{
+    background: white;
+    display: flex;
+}
+.contact-left{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 80%;
+}
+.innerContact{
+    width: 80%;
+    height: 100%;
+}
+.contact-right{
+    overflow: hidden;
+    width: 40%;
+    height: 80%
+}
+.contact-right img{
+    position: relative;
+    width:108%;
+    top: 10%;
+    height:100%
+}
+h1{
+    margin-bottom: 10px;
+}
+.container p{
+    margin-bottom: 40px;
+}
+.input-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.input-row .input-group{
+    flex-basis: 45%;
+}
+input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    padding-bottom: 5px;
+}
+textarea{
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+label{
+    margin-bottom: 6px;
+    display: block;
+    color: #3B71CA;
+}
+button{
+    background: #3B71CA;
+    width: 100px;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 35px;
+    border-radius: 30px;
+    margin-top: 20px;
+    box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+}
+.contact-left h3{
+    color: #3B71CA;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.contact-right h3{
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+tr td:first-child{
+    padding-right: 20px;
+}
+tr td{
+    padding-top: 20px;
+}
