@@ -18,7 +18,7 @@ services:
     volumes:
       - .:/usr/src/app
     environment:
-      DATABASE: mongodb+srv://shashankmpcs21:Shanku%402002@cluster0.hltszt0.mongodb.net/?retryWrites=true&w=majority
+      DATABASE: mongodb+srv://shashankmpcs21:Shanku%402002@cluster0.hltszt0.mongodb.net/?retryWrites=true&w =majority
       PORT: 3000
     depends_on:
       - mongo_db
