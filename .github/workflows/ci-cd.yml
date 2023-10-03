@@ -23,4 +23,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Push Docker image to Docker Hub
-        run: docker push shashankmpatil200/new_repo
+        run: docker push shashankmpatil200/new_repo_2
