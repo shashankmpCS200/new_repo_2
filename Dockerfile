@@ -1,8 +1,8 @@
 # Use a base Node.js image
-FROM node:14
+FROM node:alpine
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json files and install dependencies
 COPY package*.json ./
@@ -13,9 +13,6 @@ COPY . .
 
 # Expose the port your application will run on (replace 3000 with your application's port)
 EXPOSE 3000
-
-# Define the health check command
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 CMD curl -f http://localhost:4000/ || exit 1
 
 # Start the application
 CMD ["npm", "run", "dev"]
